@@ -1,14 +1,8 @@
 # google-sheets-gpt
 
-### Overview
+## Additional Code Needed
 
-This repo is part of a tutorial on how to use OpenAI Assistants API v2 in Google Sheets. 
-
-Watch the full tutorial here: https://youtu.be/QJDj0UUcoDM?si=j3UNtVISXFZZnHGn
-
-### Additional Code Needed
-
-Install this code into the Google Apps Script:
+We need to add this to Google Apps Script.
 
 ```
 function GPT(inputString, cellRange) {
@@ -21,8 +15,14 @@ function GPT(inputString, cellRange) {
   const flattenedValues = rangeValues.flat();
 
   const payload = {
-    'yourDataField1': inputString, // Adjust according to your API requirements
-    'yourDataField2': flattenedValues // Adjust according to your API requirements
+    'event': flattenedValues,
+    'location': flattenedValues,
+    'clothing': flattenedValues,
+    'time': flattenedValues,
+    'nudity': flattenedValues,
+    'emotion': flattenedValues,
+    'dynamic': flattenedValues,
+    'num': flattenedValues,
   };
 
   const options = {
@@ -43,9 +43,3 @@ function GPT(inputString, cellRange) {
   }
 }
 ```
-
-### Support Me
-
-If this tutorial/ code saved you time, consider buying me a coffee:
-
-→ [Buy Me a Coffee](https://ko-fi.com/bartybart)
